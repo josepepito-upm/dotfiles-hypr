@@ -30,7 +30,6 @@ hl.bind(mainMod .. " + SHIFT + J", function()                                   
         end
 end)
 
-
 -- Move focus with mainMod + arrow key
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
