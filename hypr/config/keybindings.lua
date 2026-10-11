@@ -17,11 +17,9 @@ hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(defaults.windowSwitcher .. "hold"
 
 -- Window management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))  --toggle floating
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen)                    --toggle fullscreen
--- hl.bind(mainMod .. " + SHIFT + J", function()                        -- Switch windows between monitors (WIP)
---      hl.dsp.window.move("activewindow", "")
--- end)
+hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))                          -- Toggle floating
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen)                                            -- Toggle fullscreen
+-- hl.bind(mainMod .. " + SHIFT + J", hl.dsp.workspace.swap_monitors({"HDMI-A-1", "HDMI-A-2"}))    -- Switch windows between monitors (WIP)
 
 -- Move focus with mainMod + arrow key
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -65,7 +63,7 @@ hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd(defaults.music))
 hl.bind(mainMod .. " + C", hl.dsp.workspace.toggle_special("chat"))             -- Messages
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(defaults.messageClient))
 hl.bind(mainMod .. " + D", hl.dsp.workspace.toggle_special("discord"))          -- Discord
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(defaults.discordClient))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(defaults.discordClient))
 
 -- Media keys
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(defaults.volumeUp))

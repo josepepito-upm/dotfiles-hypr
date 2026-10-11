@@ -7,3 +7,6 @@ require("config.monitors")          -- Monitor configuration
 require("config.permissions")       -- Permissions
 require("config.user-defaults")     -- Default programs
 require("config.win-works-rules")   -- Window and workspace rules
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()
