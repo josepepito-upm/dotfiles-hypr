@@ -1,31 +1,31 @@
 -- USER DEFAULTS --
 -- Note: for noctalia, see https://docs.noctalia.dev/noctalia/compositor-settings/hyprland/
-local defaults = {}
-local ipc = "noctalia msg"
+local ipc           = "noctalia msg"
 
 -- default programs
-defaults.terminal       = "kitty"                                               -- Terminal
-defaults.fileManager    = "thunar"                                              -- File manager
-defaults.music          = "spotify"                                             -- Music player / Streaming music service
-defaults.musicClass    = "Spotify"                                             -- Music player / Streaming music service
-defaults.messageClient  = "ferdium"                                             -- Message client (like Ferdium, Rambox...)
-defaults.discordClient  = "vesktop"                                             -- Discord client
-defaults.browser        = "zen-browser"                                         -- Browser
-defaults.screenshot     = "flameshot gui"                                       -- Screenshot utility
+return {
+    terminal        = "kitty",                                              -- Terminal
+    fileManager     = "thunar",                                             -- File manager
+    music           = "spotify",                                            -- Music player / Streaming music service
+    musicClass      = "Spotify",                                            -- Class por spotify
+    messageClient   = "ferdium",                                            -- Message client (like Ferdium, Rambox...)
+    discordClient   = "vesktop",                                            -- Discord client
+    browser         = "zen-browser",                                        -- Browser
+    screenshot      = "flameshot gui",                                      -- Screenshot utility
 
--- shell defaults
-defaults.barOrShell     = "noctalia"                                            -- Status bar/shell
-defaults.menu           = ipc .. "panel-toggle launcher"                        -- App launcher
-defaults.sessionMenu    = ipc .. "panel-toggle session"                         -- Session menu (lock, suspend, shutdown...)
-defaults.sessionLock    = ipc .. "session lock"                                 -- Session lock
-defaults.settings       = ipc .. "settings-open"                                -- Shell Settings
-defaults.windowSwitcher = ipc .. "window-switcher"                              -- Window switcher
+    -- shell defaults
+    barOrShell      = "noctalia",                                           -- Status bar/shell
+    menu            = " panel-toggle launcher",                             -- App launcher
+    sessionMenu     = " panel-toggle session",                              -- Session menu (lock, suspend, shutdown...)
+    sessionLock     = " session lock",                                      -- Session lock
+    settings        = " settings-open",                                     -- Shell Settings
+    windowSwitcher  = " window-switcher ",                                  -- Window switcher
+    ipc             = ipc,
 
--- brightness and volume control
-defaults.volumeUp       = ipc .. "volume-up"
-defaults.volumeDown     = ipc .. "volume-down"
-defaults.mute           = ipc .. "volume-mute"
-defaults.brightnessUp   = ipc .. "brightnessUp"
-defaults.brightnessDown = ipc .. "brightnessDown"
-
-return defaults
+    -- brightness and volume control
+    volumeUp       = ipc .. "volume-up",
+    volumeDown     = ipc .. "volume-down",
+    mute           = ipc .. "volume-mute",
+    brightnessUp   = ipc .. "brightnessUp",
+    brightnessDown = ipc .. "brightnessDown"
+}

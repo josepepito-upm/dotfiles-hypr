@@ -49,6 +49,11 @@ hl.window_rule({
     center = true
 })
 hl.window_rule({
+    match       = { class = "flameshot" },
+    float  = true,
+    center = true
+})
+hl.window_rule({
     match       = { modal = true },
     float  = true,
     center = true

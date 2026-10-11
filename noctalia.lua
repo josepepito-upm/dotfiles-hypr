@@ -1,1 +1,0 @@
-/home/josepepito/.config/hypr/noctalia.lua

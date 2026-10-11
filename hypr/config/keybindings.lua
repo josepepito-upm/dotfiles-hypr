@@ -1,6 +1,7 @@
 -- KEYBINDINGS --
 -- https://wiki.hypr.land/configuring/core/binds/
 local defaults = require("config.user-defaults")
+local ipc = defaults.ipc
 local mainMod = "SUPER"                                                 -- Sets "Windows" key as main modifier
 
 -- Default program binds
@@ -10,16 +11,16 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(defaults.browser))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(defaults.screenshot))
 
 -- Shell binds
-hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd(defaults.menu))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(defaults.sessionMenu))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(defaults.settings))
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(defaults.windowSwitcher .. "hold"))
+hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd(ipc .. defaults.menu))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(ipc .. defaults.sessionMenu))
+hl.bind(mainMod .. " + CONTROL + C", hl.dsp.exec_cmd(ipc .. defaults.settings))
+hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. defaults.windowSwitcher .. "hold"))
 
 -- Window management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))                          -- Toggle floating
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen)                                            -- Toggle fullscreen
--- hl.bind(mainMod .. " + SHIFT + J", hl.dsp.workspace.swap_monitors({"HDMI-A-1", "HDMI-A-2"}))    -- Switch windows between monitors (WIP)
+hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))                              -- Toggle floating
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen)                                                -- Toggle fullscreen
+-- hl.bind(mainMod .. " + SHIFT + J", hl.dsp.workspace.swap_monitors({"HDMI-A-1", "HDMI-A-2"}))     -- Switch windows between monitors (WIP)
 
 -- Move focus with mainMod + arrow key
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
