@@ -9,8 +9,8 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match       = { class = "vesktop", title = "" },
-    rounding = 20
+    match       = { class = "vesktop", title = "vesktop" },
+    rounding = 10
 })
 hl.window_rule({
     match       = { title = "^((?i)info|attention|error|warning|question|attention|confirm)$" },
@@ -52,6 +52,11 @@ hl.window_rule({
     match       = { class = "flameshot" },
     float  = true,
     center = true
+})
+hl.window_rule({
+    match       = { title = "^((?i).*(settings|config|pref|options).*)$" },
+    float       = true,
+    center      = true
 })
 hl.window_rule({
     match       = { modal = true },

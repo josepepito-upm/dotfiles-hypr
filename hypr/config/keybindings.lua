@@ -3,7 +3,7 @@
 local defaults = require("config.user-defaults")
 local ipc = defaults.ipc
 local mainMod = "SUPER"                                                 -- Sets "Windows" key as main modifier
-
+local monitors = hl.get_monitors()                                                    -- Get monitor info for multi-monitor setups
 -- Default program binds
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(defaults.terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(defaults.fileManager))
@@ -20,7 +20,16 @@ hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. defaults.windowSwitcher .. "hold"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))                              -- Toggle floating
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen)                                                -- Toggle fullscreen
--- hl.bind(mainMod .. " + SHIFT + J", hl.dsp.workspace.swap_monitors({"HDMI-A-1", "HDMI-A-2"}))     -- Switch windows between monitors (WIP)
+hl.bind(mainMod .. " + SHIFT + J", function()                                                       -- Switch windows between monitors (WIP)
+        local n = #monitors
+        if n < 2 then
+            return
+        end
+        for m = 0, n - 2 do
+            hl.dispatch(hl.dsp.workspace.swap_monitors({ monitor1 = m, monitor2 = m + 1 }))
+        end
+end)
+
 
 -- Move focus with mainMod + arrow key
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -63,7 +72,7 @@ hl.bind(mainMod .. " + M", hl.dsp.workspace.toggle_special("musicPlayer"))      
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd(defaults.music))
 hl.bind(mainMod .. " + C", hl.dsp.workspace.toggle_special("chat"))             -- Messages
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(defaults.messageClient))
-hl.bind(mainMod .. " + D", hl.dsp.workspace.toggle_special("discord"))          -- Discord
+hl.bind(mainMod .. " + D", hl.dsp.workspace.toggle_special("discordClient"))          -- Discord
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(defaults.discordClient))
 
 -- Media keys
