@@ -7,6 +7,7 @@ local ipc = "noctalia msg"
 defaults.terminal       = "kitty"                                               -- Terminal
 defaults.fileManager    = "thunar"                                              -- File manager
 defaults.music          = "spotify"                                             -- Music player / Streaming music service
+defaults.musicClass    = "Spotify"                                             -- Music player / Streaming music service
 defaults.messageClient  = "ferdium"                                             -- Message client (like Ferdium, Rambox...)
 defaults.discordClient  = "vesktop"                                             -- Discord client
 defaults.browser        = "zen-browser"                                         -- Browser

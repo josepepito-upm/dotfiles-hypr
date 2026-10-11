@@ -56,7 +56,7 @@ hl.window_rule({
 
 -- Default apps rules
 hl.window_rule({
-    match       = { class = defaults.music },
+    match       = { class = defaults.musicClass },
     float       = true,
     center      = true,
     size        = { 1400, 900 },
