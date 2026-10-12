@@ -1,4 +1,4 @@
--- monitor and other graphical session configs
+-- MONITOR AND COMPOSITOR SETTINGS --
 -- https://wiki.hypr.land/Configuring/Monitors/
 local monitors = {
     primary = {
