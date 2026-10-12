@@ -138,9 +138,10 @@ hl.layer_rule({
   blur_popups = true,
 })
 -- Binds workspaces to monitors (1 to 5 for primary monitor, 6 to 10 for secondary one)
--- for i = 1,5 do
---    hl.workspace_rule({
---        workspace = tostring(i),
---        monitor = monitors.primary.output
---    })
--- end
+for i = 1,5 do
+    hl.workspace_rule({
+        workspace = tostring(i),
+        monitor = monitors.primary.output,
+        default = true
+    })
+end
