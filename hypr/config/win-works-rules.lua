@@ -1,6 +1,7 @@
 -- WINDOW, WORKSPACE AND LAYER RULES --
 -- https://wiki.hypr.land/configuring/core/rules/
 local defaults = require("config.user-defaults")
+local monitors = require("config.monitors")                                                    -- Get monitor info for multi-monitor setups
 
 -- Rounding and border rules
 hl.window_rule({
@@ -93,17 +94,6 @@ hl.window_rule({
     size = { 1080, 920 },
 })
 
-hl.layer_rule({
-  name = "noctalia",
-  match = {
-    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
-  },
-  no_anim = true,
-  ignore_alpha = 0.5,
-  blur = true,
-  blur_popups = true,
-})
-
 -- Picture-In-Picture
 hl.window_rule({
     match       = { class = "Picture-in-Picture" },
@@ -136,3 +126,21 @@ hl.window_rule({
 
     no_focus = true,
 })
+
+hl.layer_rule({
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
+  },
+  no_anim = true,
+  ignore_alpha = 0.5,
+  blur = true,
+  blur_popups = true,
+})
+-- Binds workspaces to monitors (1 to 5 for primary monitor, 6 to 10 for secondary one)
+-- for i = 1,5 do
+--    hl.workspace_rule({
+--        workspace = tostring(i),
+--        monitor = monitors.primary.output
+--    })
+-- end
