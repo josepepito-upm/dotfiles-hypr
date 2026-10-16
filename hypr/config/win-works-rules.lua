@@ -50,7 +50,7 @@ hl.window_rule({
     center = true
 })
 hl.window_rule({
-    match       = { class = "flameshot" },
+    match       = { class = defaults.screenshot },
     float  = true,
     center = true
 })
@@ -69,7 +69,11 @@ hl.window_rule({
     float  = true,
     center = true
 })
-
+hl.window_rule({
+    match       = { class = defaults.browser, title = "^(Inicia sesión: Cuentas de Google).*$" },
+    float  = true,
+    center = true
+})
 -- Default apps rules
 hl.window_rule({
     match       = { class = defaults.musicClass },
@@ -101,11 +105,11 @@ hl.window_rule({
 
 -- Picture-In-Picture
 hl.window_rule({
-    match       = { class = "Picture-in-Picture" },
+    match       = { title = "Picture-in-Picture" },
     float       = true,
     pin         = true,
-    move        = { 1240, 695 },
-    size        = { "(monitor_w*0.25)", "(monitor_h*0.25)" }
+    move        = { 1240, 660 },
+    size        = { "(monitor_w*0.35)", "(monitor_h*0.35)" }
 })
 
 local suppressMaximizeRule = hl.window_rule({
