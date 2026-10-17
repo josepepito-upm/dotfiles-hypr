@@ -69,11 +69,11 @@ hl.window_rule({
     float  = true,
     center = true
 })
-hl.window_rule({
-    match       = { class = defaults.browser, title = "^(Inicia sesión: Cuentas de Google).*$" },
-    float  = true,
-    center = true
-})
+-- hl.window_rule({
+    -- match       = { class = defaults.browser, title = "^(Inicia sesión: Cuentas de Google).*$" },
+    -- float  = true,
+    -- center = true
+    -- })
 -- Default apps rules
 hl.window_rule({
     match       = { class = defaults.musicClass },
